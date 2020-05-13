@@ -68,3 +68,11 @@ b = None
 print(type(b))
 
 
+# I/O Basics of Files in Python 
+# muffle.read() --> outputs a giant string of everything in the file 
+# # .readlines() --> outputs each sentence as a list 
+
+# Opening a file living somewhere on your computer, just pass in the file path
+# .open('...file - path..')
+# should use forward slash '/' in the file path 
+# Always make sure to close the file once done with it by .close()
