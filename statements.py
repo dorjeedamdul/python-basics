@@ -113,7 +113,173 @@ for key,value in myinfo.items():
     print(key) # prints out all the keys 
 
 ####  --- WHILE LOOPS IN PYTHON --- #### 
+# While loops will continue to execute  block of code while some condition remain true 
+# syntax
+#while ome_boolean_condition:
+    #do something 
 
+# combine with else statement
+#while ome_boolean_condition:
+    #do something 
+#else 
+    #do something different
 
+print("\nWhile Loop example:")
 
+x = 0
 
+while x < 5:
+    print(f'The value of x is {x}')
+    x += 1
+else: 
+    print('X is not less than 5')
+
+###  break, continue and pass  ### 
+# we can use break, continue and pass statements in our loops to add additional functionality for various cases. The three statements are defined by:
+# break: breaks out of the current closest enclosing loop
+# continue: goes to the top of the closest enclosing loop 
+# pass: does nothing at all - use it as a place holder 
+print("\nContinue in loops example:")
+
+somestring = 'dorje'
+
+for letter in somestring:
+    if letter == 'r': # this says if the letter is equal to 'a' then go to top of the closest enclosing and keep printing letters 
+        continue
+    print(letter)
+
+print("\nBreak in for loops example:")
+ 
+for letter in somestring:
+    if letter =='j':
+        break
+    print(letter)
+
+print("\n'Break' in while loops example:")
+x = 1
+
+while x < 5:
+    if x == 4:
+        break
+    print(x)
+    x += 1
+
+####  --- USEFUL OPERATORS IN PYTHON --- #### 
+
+print("\nrange function example:")
+# range(start, stop[,step]) 
+mynum = [1,2,3]
+
+for num in range(10):  # prints up to 10, starting from 0 - 9
+    print(num)
+print('\n')
+for num in range(3,10): # starts at 3 and prints up to 9 
+    print(num)
+
+print('\n')
+for num in range(0,11,2): # starts at 0, prints up to 10 by step size of 2 
+    print(num)
+
+# enumerate() function:
+print("\nenumerate function example:")
+
+myname = 'dorje'
+
+for letter in enumerate(myname):
+    print(letter)
+
+# or you can use the enumerate function with index  
+print('\n')
+for index, letter in enumerate(myname):
+    print(index, letter)
+    
+# zip function: zips together 2 or more lists and pairs up the items in those lists 
+print("\nZip function example:")
+
+firstlist = [1,2,3]
+secondlist = ['a', 'b', 'c']
+thirdlist = ['first', 'second', 'third']
+for  item in zip(firstlist, secondlist, thirdlist):
+    print(item)
+# When working with uneven number of items in one list -  zip only goes as far as the lists with the least number of items, and ignores the rest of the extra items in that list 
+print("\nSecond zip function example:")
+
+firstlist = [1,2,3,4,5,6,7,8,9]
+secondlist = ['a', 'b', 'c']
+thirdlist = ['first', 'second', 'third']
+
+for item in zip(firstlist, secondlist, thirdlist):
+    print(item)
+
+print("\nThird zip function example:")
+
+print(list(zip(firstlist, secondlist, thirdlist)))
+
+# unpacking lists 
+print("\nTuple unpacking example:")
+
+for a, b, c in zip(firstlist, secondlist, thirdlist):
+    print(a) # remember 'a' here is the firstlist
+    # print(b) # remember 'b' here is the secondlist 
+    # print(c) # remember 'c' here is the thirdlist
+
+# 'in' operator
+print('x' in [1,2,3])  # returns false 
+
+print('x' in ['x', 'y', 'z'])  # returns true 
+
+# works in a string also 
+print('d' in 'dorje')
+
+# also works in dictionaries 
+mydictionary = {'name': 'dorje', 'age': 28}
+print('age' in mydictionary)
+print(28 in mydictionary.values())
+
+# min and max methods 
+print("\nMin and Max example:")
+
+mynumist = [10,2,6,8,9,12,50]
+
+print(min(mynumist))
+print(max(mynumist))
+
+# Random library: this library has tons of functions in it. To import any function, use the below syntax 
+# from random import shuffle 
+print("\nRandom library - shuffle example:")
+
+mynewlist = [1,2,3,4,5,6,7,8,9,10]
+# print(shuffle(mynumist))
+ 
+# randint()
+# print(randint(0,100)) # returns a random integer between 0 - 100 
+
+# Saving user input in python : always accept te input as a "string", even the entered numbers are stringed. You can use 
+# int(result) - to change the stringed number input value to an integer 
+# (input('Please enter your name below'))
+
+####  --- LIST COMPEREHENSIONS IN PYTHON --- #### 
+# List comprehensions are a unique way of quickly creating a list with python. If you find yoursefl using for loop along with the 
+# .append() to create a list. List comprehensions are a good alternative 
+print("\nList Comprehensions example:")
+
+myexample = 'gogodada'
+newlist = []
+
+for letter in myexample:
+    newlist.append(letter)
+print(newlist)
+    
+# Doing the same work as above using list comprehension
+
+newlist = [letter for letter in myexample]
+print(newlist)  # same result as above with less code 
+
+anotherexample = [x for x in 'dorje']
+print(anotherexample)
+
+mylist = [num for num in range(0,10)] # first num is the what gets appended 
+print(mylist)
+
+mylist = [num + 2 for num in range(0,10)]
+print(mylist)
