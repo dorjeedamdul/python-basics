@@ -270,7 +270,7 @@ for letter in myexample:
     newlist.append(letter)
 print(newlist)
     
-# Doing the same work as above using list comprehension
+# Doing the same work as above using LIST COMPREHENSION 
 
 newlist = [letter for letter in myexample]
 print(newlist)  # same result as above with less code 
@@ -283,3 +283,24 @@ print(mylist)
 
 mylist = [num + 2 for num in range(0,10)]
 print(mylist)
+
+mylastlist = [1,2,4,13,43,99,80,42,100]
+
+newlist = [x for x in range(0,10) if x % 2 == 0]
+print(newlist)
+
+print("\nMore Complex List-Comprehensions Examples:")
+celcius = [0,10,35,40]
+
+temp_in_fahrenheit = [((9/5) * temp + 32) for temp in celcius]
+print(temp_in_fahrenheit)
+
+## Simpler form of the above example
+temp_in_fahrenheit = []
+
+for temp in celcius:
+    temp_in_fahrenheit.append((9/5) * temp + 32)
+
+print(temp_in_fahrenheit)
+
+
